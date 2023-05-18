@@ -1,0 +1,54 @@
+{
+    "cardsArray": [
+    {
+        "num": 1,
+        "name": "grizzly",
+        "img": "src/images/grizzly.png"
+    }, {
+        "num": 1,
+        "name": "grizzly",
+        "img": "src/images/grizzly.png"
+    }, {
+        "num": 2,
+        "name": "panda",
+        "img": "src/images/panda.png"
+    }, {
+        "num": 2,
+        "name": "panda",
+        "img": "src/images/panda.png"
+    }, {
+        "num": 3,
+        "name": "icebear",
+        "img": "src/images/icebear.png"
+    }, {
+        "num": 3,
+        "name": "icebear",
+        "img": "src/images/icebear.png"
+    }, {
+        "num": 4,
+        "name": "koala",
+        "img": "src/images/koala.png"
+    }, {
+        "num": 4,
+        "name": "koala",
+        "img": "src/images/koala.png"
+    }, {
+        "num": 5,
+        "name": "chloe",
+        "img": "src/images/chloe.png"
+    }, {
+        "num": 5,
+        "name": "chloe",
+        "img": "src/images/chloe.png"
+    }, {
+        "num": 6,
+        "name": "allbear",
+        "img": "src/images/allbear.png"
+    }, {
+        "num": 6,
+        "name": "allbear",
+        "img": "src/images/allbear.png"
+    }
+
+    ]
+}
