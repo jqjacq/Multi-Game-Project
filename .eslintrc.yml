@@ -1,0 +1,11 @@
+env:
+  browser: true
+  es2021: true
+plugins:
+  - prettier
+rules:
+  "prettier/prettier":
+    - error
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
