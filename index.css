@@ -34,6 +34,21 @@
 .grid-item:active {
     opacity: 1;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.gameNav {
+    text-decoration: none;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+.gameNav:hover {
+    font-weight: bold;
+}
 
 @keyframes rotate { /*Card Rotation Effect*/
     from {
