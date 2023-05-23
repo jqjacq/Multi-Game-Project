@@ -1,0 +1,15 @@
+#game1-container {
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}   
+/* .card {
+}
+.flipped {
+
+}
+.reverse {
+     */
+/* } */

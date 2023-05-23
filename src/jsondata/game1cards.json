@@ -1,5 +1,4 @@
-{
-    "cardsArray": [
+[
     {
         "num": 1,
         "name": "grizzly",
@@ -49,6 +48,4 @@
         "name": "allbear",
         "img": "src/images/allbear.png"
     }
-
-    ]
-}
+]

@@ -6,6 +6,10 @@
 .center {
     text-align: center;
 }
+.game-selection {
+    text-decoration: none;
+    color: black;
+}
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -30,7 +34,8 @@
 .grid-item:active {
     opacity: 1;
 }
-@keyframes rotate {
+
+@keyframes rotate { /*Card Rotation Effect*/
     from {
         transform: rotateY(0deg);
     }
