@@ -19,19 +19,14 @@ Rock Paper Scissor
 - Display Score
 - Reset Game
 
-Snake
+Tic Tac Toe
 
-- Create Snake
-- Create Food
+- Create Board
+- Create Player
+- Create AI
+- Create Win Condition
 - Create Score
-- Create Game Over
-- Create Movement
-- Create Collision
-- Create Food Consumption
-- Create Score Update
-- Create Game Over
 - Create Reset Game
-
 Breakout
 
 - Create Paddle
@@ -45,6 +40,7 @@ Breakout
 - Create Game Over
 - Create Reset Game
 
+
 Whack a Bear
 
 - Create Bear
@@ -56,11 +52,15 @@ Whack a Bear
 - Create Reset Game
 - Create Score Update
 
-Tic Tac Toe
+Snake
 
-- Create Board
-- Create Player
-- Create AI
-- Create Win Condition
+- Create Snake
+- Create Food
 - Create Score
+- Create Game Over
+- Create Movement
+- Create Collision
+- Create Food Consumption
+- Create Score Update
+- Create Game Over
 - Create Reset Game
