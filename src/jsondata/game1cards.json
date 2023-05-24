@@ -2,50 +2,50 @@
     {
         "num": 1,
         "name": "grizzly",
-        "img": "src/images/grizzly.png"
+        "img": "src/imgs/game1imgs/grizzly.png"
     }, {
         "num": 1,
         "name": "grizzly",
-        "img": "src/images/grizzly.png"
+        "img": "src/imgs/game1imgs/grizzly.png"
     }, {
         "num": 2,
         "name": "panda",
-        "img": "src/images/panda.png"
+        "img": "src/imgs/game1imgs/panda.png"
     }, {
         "num": 2,
         "name": "panda",
-        "img": "src/images/panda.png"
+        "img": "src/imgs/game1imgs/panda.png"
     }, {
         "num": 3,
         "name": "icebear",
-        "img": "src/images/icebear.png"
+        "img": "src/imgs/game1imgs/icebear.png"
     }, {
         "num": 3,
         "name": "icebear",
-        "img": "src/images/icebear.png"
+        "img": "src/imgs/game1imgs/icebear.png"
     }, {
         "num": 4,
         "name": "koala",
-        "img": "src/images/koala.png"
+        "img": "src/imgs/game1imgs/koala.png"
     }, {
         "num": 4,
         "name": "koala",
-        "img": "src/images/koala.png"
+        "img": "src/imgs/game1imgs/koala.png"
     }, {
         "num": 5,
         "name": "chloe",
-        "img": "src/images/chloe.png"
+        "img": "src/imgs/game1imgs/chloe.png"
     }, {
         "num": 5,
         "name": "chloe",
-        "img": "src/images/chloe.png"
+        "img": "src/imgs/game1imgs/chloe.png"
     }, {
         "num": 6,
         "name": "allbear",
-        "img": "src/images/allbear.png"
+        "img": "src/imgs/game1imgs/allbear.png"
     }, {
         "num": 6,
         "name": "allbear",
-        "img": "src/images/allbear.png"
+        "img": "src/imgs/game1imgs/allbear.png"
     }
 ]

@@ -2,14 +2,15 @@
     display: grid;
     justify-content: center;
     grid-gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }   
-/* .card {
+.card {
+    width: 150px;
+    height: 180px;
+    border-radius: 5px solid black;
 }
-.flipped {
+/* .flipped {
 
-}
-.reverse {
-     */
+} */
+/* .reverse {
 /* } */
