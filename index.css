@@ -26,7 +26,7 @@
     opacity: 0.5;
   }
 .grid-item:hover {
-    animation: rotate 1s linear;
+    animation: rotate 0.2s linear;
     cursor: pointer;
     font-weight: bold;
     opacity: 0.75;

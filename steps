@@ -1,4 +1,4 @@
-Matching Game
+Game 1. Matching Game
 
 - Create Cards (12)
 - Create Card Flip
@@ -10,7 +10,7 @@ Matching Game
 - Create Card Result
 - Create Card Reset
 
-Rock Paper Scissor
+Game 2. Rock Paper Scissor
 
 - Rock Selection, Paper Selection, Scissor Selection
 - Computer Selection
@@ -19,15 +19,16 @@ Rock Paper Scissor
 - Display Score
 - Reset Game
 
-Tic Tac Toe
+Game 3. Tic Tac Toe
 
 - Create Board
 - Create Player
 - Create AI
-- Create Win Condition
+- Create Win Condition 
 - Create Score
 - Create Reset Game
-Breakout
+
+Game 4. Breakout
 
 - Create Paddle
 - Create Ball
@@ -41,7 +42,7 @@ Breakout
 - Create Reset Game
 
 
-Whack a Bear
+Game 5. Whack a Bear
 
 - Create Bear
 - Create Bear Movement
@@ -52,7 +53,7 @@ Whack a Bear
 - Create Reset Game
 - Create Score Update
 
-Snake
+Game 6. Snake
 
 - Create Snake
 - Create Food
