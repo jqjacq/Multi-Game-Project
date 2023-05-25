@@ -11,19 +11,20 @@
     <body>
         <game-nav></game-nav>
         <heading><h1 class="center"> Breakout </h1></heading>
+        <div id="game4-container">
         <h3> Score
             <span class="count-score">0</span>
+            Lives
+            <span class="lives"> 3 </span>
         </h3>
-        <h3>Lives
-            <span class="lives"></span>
-        </h3>
-        <div id="game4-container">
+            <canvas id="myCanvas" width="480" height="320"></canvas>
             <div id="paddle"></div>
             <div id="ball"></div>
             <div id="bricks-container"></div>
+            <br>
+            <button class="start-btn">Start</button>
+            <button class="restart-btn">Restart</button>
         </div>
         <p class="display-result"></p>
-        <button class="start-btn">Start</button>
-        <button class="restart-btn">Restart</button>
     </body>
 </html>

@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+canvas {
+    background-color: antiquewhite;
+   display: block;
+   margin: 0 auto;
+}
+.count-score , .lives {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+#game4-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
