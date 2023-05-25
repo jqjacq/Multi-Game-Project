@@ -13,6 +13,16 @@
     font-weight: bold;
     opacity: 0.8;
 }
+.player-selection, .computer-selection{
+    border-radius: 50%;
+    background-color: white;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+.display-result {
+    color: black;
+    text-align: center;
+}
 #game2-container {
     display: flex;
     flex-direction: column;
@@ -21,11 +31,13 @@
 }
 #result {
     border-radius: 10px;
-    background-color: lightblue;
     width: 350px;
     height: 200px;
     margin: 1rem;
-    opacity: 0.5;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #selections {
     display: flex;

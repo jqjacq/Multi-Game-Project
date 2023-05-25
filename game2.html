@@ -5,14 +5,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
         <script type="module" src="nav.js"></script>
         <script type="module" src="./src/utils/game2.js"></script>
-        <link rel="stylesheet" href="/index.css">
         <link rel="stylesheet" href="./src/styles/game2.css">
+        <link rel="stylesheet" href="/index.css">
     </head>
     <body>
         <game-nav></game-nav>
         <heading><h1 class="center"> Rock Paper Scissor </h1></heading>
         <div id="game2-container">
-            <p id="result" class="display-result"></p>
             <br>
             <div id="selections">
                 <button class="choice-btn" id="rock-btn"> 
@@ -32,12 +31,13 @@
             <h3 id="scores">
                 Player Score
                 <span class="player-score">0</span>
-            :
+                :
                 <span class="computer-score">0</span>
                 Computer Score
             </h3>
-            <button class="start-btn">Start</button>
             <button class="restart-btn">Restart</button>
+            <p id="result" class="display-result">
+            </p>
         </div>
     </body>
 </html>
