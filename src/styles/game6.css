@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h3 {
+    text-align: center;
+}
+.count-score {
+    margin-right: 1rem;
+}
+#snakeCanvas {
+    width: 400px;
+    height: 400px;
+    background-color: black;
+}
+#game3-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
