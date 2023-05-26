@@ -7,7 +7,14 @@ const cards = document.querySelectorAll(".card");
 let cardsArray = [];
 let cardsChosen = [];
 let cardsChosenId = [];
+let moves = 0;
+let timer;
 
+//TODO
+// Fix move count bug --it is counting every click
+// Recognize when card is flipped as a match
+// Flip card back over if not a match
+// Add where when user completes game, timer stops and displays result
 function randomizedCard(cardsData) {
   let randomizedCard = cardsData.sort(() => 0.5 - Math.random());
   randomizedCard.forEach((cardData) => {
@@ -21,12 +28,30 @@ function randomizedCard(cardsData) {
       card.style.backgroundImage = `url(${cardData.img})`;
       cardsChosenId.push(cardData.num);
       checkForMatching(card);
+      countMoves();
     });
     grid.appendChild(card);
   });
 }
+function setTimer() {
+  stopTimer();
+  let time = 0;
+  timer = setInterval(() => {
+    time++;
+    displayTimer.textContent = time;
+  }, 1000);
+}
+function stopTimer() {
+  clearInterval(timer);
+}
+function countMoves() {
+  moves++;
+  displayMoves.textContent = moves;
+}
+
 function startGame() {
   restartGame();
+  setTimer();
   //Retrieve data and Randomize the cards
   fetch("src/jsondata/game1cards.json")
     .then((response) => response.json())
@@ -45,6 +70,7 @@ function restartGame() {
   displayTimer.textContent = 0;
   startBtn.disabled = false;
   restartBtn.disabled = true;
+  stopTimer(timer);
 }
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", restartGame);
@@ -73,12 +99,12 @@ function checkForMatching(cardsData) {
   // displayResult.textContent = result;
 }
 
-function flipCards() {
-  const cardId = this.getAttribute("id");
-  cardsChosen.push(cardsData[cardId].name);
-  cardsChosenId.push(cardId);
-  this.classList.add("flip");
-  if (cardsChosen.length === 2) {
-    setTimeout(checkForMatching, 500);
-  }
-}
+// function flipCards() {
+//   const cardId = this.getAttribute("id");
+//   cardsChosen.push(cardsData[cardId].name);
+//   cardsChosenId.push(cardId);
+//   this.classList.add("flip");
+//   if (cardsChosen.length === 2) {
+//     setTimeout(checkForMatching, 500);
+//   }
+// }
