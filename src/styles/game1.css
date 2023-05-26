@@ -1,4 +1,9 @@
-#game1-container {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.grid {
     display: grid;
     justify-content: center;
     grid-gap: 10px;
@@ -9,8 +14,8 @@
     height: 180px;
     border-radius: 5px solid black;
 }
-/* .flipped {
-
-} */
-/* .reverse {
-/* } */
+.flip {
+    background-image: url(../imgs/game1imgs/front.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
