@@ -1,16 +1,98 @@
-const displayResult = document.querySelector('.display-result');
-const playerScore = document.querySelector('.player-score');
-const computerScore = document.querySelector('.computer-score');
+// const playerScore = document.querySelector('.player-score');
+// const computerScore = document.querySelector('.computer-score');
 const startBtn = document.querySelector('.start-btn');
-const resetBtn = document.querySelector('.reset-btn');
-const board = document.querySelector('#board');
-const boxes = document.querySelectorAll('.box');
-const box1 = document.getElementById("box1")
-const box2 = document.getElementById("box2")
-const box3 = document.getElementById("box3")
-const box4 = document.getElementById("box4")
-const box5 = document.getElementById("box5")
-const box6 = document.getElementById("box6")
-const box7 = document.getElementById("box7")
-const box8 = document.getElementById("box8")
-const box9 = document.getElementById("box9")
+const displayResult = document.getElementById('message');
+const restartBtn = document.querySelector('.restart-btn');
+const board = document.querySelector('.gameBoard');
+const boxes = document.querySelectorAll('[data-cell]');
+const winningCombos = [
+    [0, 1, 2], // horizontal
+    [3, 4, 5], // horizontal
+    [6, 7, 8], // horizontal
+    [0, 3, 6], // vertical
+    [1, 4, 7], // vertical
+    [2, 5, 8], // vertical
+    [0, 4, 8], // diagonal
+    [2, 4, 6] // diagonal
+];
+let playerX;
+let playerO;
+let isPlayerOTurn = false;
+let currentTurn;
+
+startGame();
+
+function startGame() {
+    console.log('clicked');
+    isPlayerOTurn = false;
+    boxes.forEach(box => {
+        box.classList.remove('playerX');
+        box.classList.remove('playerO');
+        box.removeEventListener('click', handleBoxClick);
+        box.addEventListener('click', handleBoxClick, { once: true });
+    });
+    setPlayerHover();
+    displayResult.classList.remove('show');
+}
+
+function handleBoxClick(e) {
+    const box = e.target;
+    let currentTurn = isPlayerOTurn ? 'playerO' : 'playerX';
+    placeMark(box, currentTurn);
+    if (checkWin(currentTurn)) {
+        endGame(false);
+    } else if (isDraw()) {
+        endGame(true);
+    } else {
+        swapTurns();
+        setPlayerHover();
+    }
+    console.log(currentTurn);
+}
+//End game
+function endGame(draw) {
+    if (draw) {
+        displayResult.innerText = 'Draw!';
+    } else {
+        displayResult.innerText = `${isPlayerOTurn ? "O's" : "X's"} Wins!`;
+    }
+    displayResult.classList.add('show');
+}
+//Check for draw 
+function isDraw() {
+    return [...boxes].every(box => {
+        return box.classList.contains(playerX) || box.classList.contains(playerO);
+    });
+}
+//Add mark to board
+function placeMark(box, currentTurn) {
+    box.classList.add(currentTurn);
+}
+// Swap turns
+function swapTurns() {
+    isPlayerOTurn = !isPlayerOTurn;
+}
+//Player's turn to place mark
+function setPlayerHover() {
+    board.classList.remove(playerX);
+    board.classList.remove(playerO);
+    if (isPlayerOTurn) {
+        board.classList.add(playerO);
+    } else {
+        board.classList.add(playerX);
+    }
+}
+//Check for winning condition
+function checkWin(currentClass) {
+    return winningCombos.some(combo => {
+        return combo.every(index => {
+            return boxes[index].classList.contains(currentTurn);
+        });
+    });
+}
+function restartGame() {
+    startGame();
+}
+
+startBtn.addEventListener('click', startGame);
+restartBtn.addEventListener('click', restartGame);

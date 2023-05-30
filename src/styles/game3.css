@@ -23,3 +23,21 @@
     align-items: center;
     flex-direction: column;
 }
+.show {
+    display: block;
+}
+.currentTurn:hover, .playerO:hover, .playerX:hover  {
+    cursor: pointer;
+}
+
+/*Display X and Os*/
+.playerX {
+    background-image: url("../imgs/game3imgs/playerX.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.playerO {
+    background-image: url("../imgs/game3imgs/playerO.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

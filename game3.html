@@ -5,29 +5,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
         <script type="module" src="nav.js"></script>
         <script type="module" src="./src/utils/game3.js"></script>
-        <link rel="stylesheet" href="/index.css">
         <link rel="stylesheet" href="./src/styles/game3.css">
+        <link rel="stylesheet" href="/index.css">
     </head>
     <body>
         <game-nav></game-nav>
         <heading><h1 class="center"> Tic Tac Toe </h1></heading>
         <div id="game3-container">
             <div id="board" class="gameBoard">
-                <div id="0" class="box"></div>
-                <div id="1" class="box"></div>
-                <div id="2" class="box"></div>
-                <div id="3" class="box"></div>
-                <div id="4" class="box"></div>
-                <div id="5" class="box"></div>
-                <div id="6" class="box"></div>
-                <div id="7" class="box"></div>
-                <div id="8" class="box"></div>
+                <div id="0" class="box" data-cell></div>
+                <div id="1" class="box" data-cell></div>
+                <div id="2" class="box" data-cell></div>
+                <div id="3" class="box" data-cell></div>
+                <div id="4" class="box" data-cell></div>
+                <div id="5" class="box" data-cell></div>
+                <div id="6" class="box" data-cell></div>
+                <div id="7" class="box" data-cell></div>
+                <div id="8" class="box" data-cell></div>
             </div>
         </div>
-        <!-- <p class="display-result"></p>
+        <div>
+            <p id="message" class="display-result"></p>
+            <button class="start-btn">Start</button>
+            <button class="restart-btn">Restart</button> 
+        </div>
+        <!-- 
         <h3>Player: <span class="player-score">0</span></h3>
-        <h3>Computer: <span class="computer-score">0</span></h3>
-        <button class="start-btn">Start</button>
-        <button class="restart-btn">Restart</button> -->
+        <h3>Computer: <span class="computer-score">0</span></h3> 
+        -->
     </body>
 </html>
