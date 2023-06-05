@@ -13,9 +13,15 @@
     width: 150px;
     height: 180px;
     border-radius: 5px solid black;
+    background-image: url(../imgs/game1imgs/front.png);
 }
 .flip {
     background-image: url(../imgs/game1imgs/front.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: black;
+}
+.display-result {
+    text-align: center;
+    font-size: 1.5rem;
 }

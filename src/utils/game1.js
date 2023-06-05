@@ -1,38 +1,37 @@
 const grid = document.querySelector(".grid");
 const displayMoves = document.querySelector(".count-moves");
 const displayTimer = document.querySelector(".timer");
+const displayResult = document.querySelector(".display-result");
 const startBtn = document.querySelector(".start-btn");
 const restartBtn = document.querySelector(".restart-btn");
 const cards = document.querySelectorAll(".card");
 let cardsArray = [];
-let cardsChosen = [];
 let cardsChosenId = [];
 let moves = 0;
 let timer;
 
-//TODO
-// Fix move count bug --it is counting every click
-// Recognize when card is flipped as a match
-// Flip card back over if not a match
-// Add where when user completes game, timer stops and displays result
-function randomizedCard(cardsData) {
-  let randomizedCard = cardsData.sort(() => 0.5 - Math.random());
-  randomizedCard.forEach((cardData) => {
-    cardsArray.push(cardData);
-    const card = document.createElement("div");
+// CREATE BOARD
+function createBoard() {
+  for (let i = 0; i < cardsArray.length; i++) {
+    let card = document.createElement("div");
     card.classList.add("card");
-    card.id = cardData.num;
-    card.style.backgroundImage = `url("src/imgs/game1imgs/front.png")`;
-    //User clicks on card and it flips
-    card.addEventListener("click", function () {
-      card.style.backgroundImage = `url(${cardData.img})`;
-      cardsChosenId.push(cardData.num);
-      checkForMatching(card);
-      countMoves();
-    });
+    card.setAttribute("data-id", i);
+    card.addEventListener("click", flipCard);
     grid.appendChild(card);
-  });
+    console.log(card);
+  }
 }
+// FLIP CARD IF MATCH
+function flipCard() {
+  let cardId = this.getAttribute("data-id");
+  cardsChosenId.push(cardId);
+  this.classList.add("flip");
+  this.innerHTML = `<img src="${cardsArray[cardId].img}" alt="${cardsArray[cardId].name}">`;
+  if (cardsChosenId.length === 2) {
+    setTimeout(checkForMatch, 300);
+  }
+}
+// SET TIMER, STOP TIMER
 function setTimer() {
   stopTimer();
   let time = 0;
@@ -44,11 +43,53 @@ function setTimer() {
 function stopTimer() {
   clearInterval(timer);
 }
-function countMoves() {
-  moves++;
+//REMOVE DISPLAY RESULT
+function removeDisplayResult() {
+  setTimeout(() => {
+    displayResult.textContent = "";
+  }, 2500);
+}
+
+// CHECK FOR MATCH AND ADD MOVES
+function checkForMatch() {
+  let cards = document.querySelectorAll(".card");
+  let firstCard = cards[cardsChosenId[0]];
+  let secondCard = cards[cardsChosenId[1]];
+  if (cardsChosenId[0] === cardsChosenId[1]) {
+    displayResult.textContent = "You have clicked the same image!";
+    removeDisplayResult()
+    firstCard.classList.remove("flip");
+    secondCard.classList.remove("flip");
+    moves++;
+  } else if (firstCard.innerHTML === secondCard.innerHTML) {
+    displayResult.textContent = "You found a match!";
+    removeDisplayResult()
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+    moves++;
+  } else {
+    displayResult.textContent = "Sorry, try again!";
+    firstCard.classList.remove("flip");
+    secondCard.classList.remove("flip");
+    firstCard.innerHTML = "";
+    secondCard.innerHTML = "";
+    moves++;
+  } 
+  //Once user completes all matches, display alert and stop timer
+  if (document.querySelectorAll(".flip").length === cardsArray.length) {
+    setTimeout(() => {
+    displayResult.textContent = `Congratulations! You found all the matches! Your time is ${displayTimer.textContent} seconds with ${moves} moves!`;
+    }, 10000);
+    stopTimer(timer);
+  }
+  cardsChosenId = [];
+
   displayMoves.textContent = moves;
 }
 
+
+
+//START AND RESTART BUTTON
 function startGame() {
   restartGame();
   setTimer();
@@ -56,14 +97,18 @@ function startGame() {
   fetch("src/jsondata/game1cards.json")
     .then((response) => response.json())
     .then((cardsData) => {
-      let randomizedCards = randomizedCard(cardsData);
+      cardsData.sort(() => 0.5 - Math.random());
+      cardsData.forEach((card) => {
+        cardsArray.push(card);
+        console.log(cardsArray);
+      });
+      createBoard();
     });
   startBtn.disabled = true;
   restartBtn.disabled = false;
 }
 function restartGame() {
   cardsArray = [];
-  cardsChosen = [];
   cardsChosenId = [];
   grid.innerHTML = "";
   displayMoves.textContent = 0;
@@ -72,39 +117,6 @@ function restartGame() {
   restartBtn.disabled = true;
   stopTimer(timer);
 }
+//EVENT LISTENER 
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", restartGame);
-
-function checkForMatching(cardsData) {
-  const cards = document.querySelectorAll(".card");
-  const cardOneId = cardsChosenId[0];
-  const cardTwoId = cardsChosenId[1];
-
-  //if card matches, keep flipped
-  //if card does not match, flip back
-  if (cardsChosen[0] == cardsChosen[1]) {
-  } else {
-    // setTimeout(() => {
-    //   cards[
-    //     cardOneId
-    //   ].style.backgroundImage = `url("../imgs/game1imgs/front.png")`;
-    //   cards[
-    //     cardTwoId
-    //   ].style.backgroundImage = `url("../imgs/game1imgs/front.png")`;
-    // }, 1000);
-  }
-  // cardsChosen = [];
-  // cardsChosenId = [];
-  // displayMoves.textContent = moves;
-  // displayResult.textContent = result;
-}
-
-// function flipCards() {
-//   const cardId = this.getAttribute("id");
-//   cardsChosen.push(cardsData[cardId].name);
-//   cardsChosenId.push(cardId);
-//   this.classList.add("flip");
-//   if (cardsChosen.length === 2) {
-//     setTimeout(checkForMatching, 500);
-//   }
-// }
