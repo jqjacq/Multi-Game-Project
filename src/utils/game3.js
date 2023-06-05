@@ -29,7 +29,6 @@ function startGame() {
     box.addEventListener("click", handleBoxClick, { once: true });
   });
   setPlayerHover();
-  displayResult.classList.remove("show");
 }
 
 function handleBoxClick(e) {
@@ -48,9 +47,9 @@ function handleBoxClick(e) {
 //End game
 function endGame(draw) {
   if (draw) {
-    displayResult.innerText = "Draw!";
+    displayResult.textContent = "Draw!";
   } else {
-    displayResult.innerText = `${isPlayerOTurn ? "O's" : "X's"} Wins!`;
+    displayResult.textContent = `${isPlayerOTurn ? "O's" : "X's"} Wins!`;
   }
   displayResult.classList.add("show");
   boxes.forEach((box) => {
@@ -78,8 +77,10 @@ function setPlayerHover() {
   board.classList.remove(playerO);
   if (isPlayerOTurn) {
     board.classList.add(playerO);
+    displayResult.textContent = "O's Turn";
   } else {
     board.classList.add(playerX);
+    displayResult.textContent = "X's Turn";
   }
 }
 //Check for winning condition

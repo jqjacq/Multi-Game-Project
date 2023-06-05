@@ -6,6 +6,50 @@
   font-family: "Orbitron", sans-serif;
 }
 
+body {
+  height: 100vh;
+}
+
+header {
+  padding: 1rem;
+}
+
+/*Navbar*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(225, 246, 239);
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > ul > li {
+  margin-left: 3rem;
+}
+
+nav > ul > li > a {
+  color: black;
+}
+
+nav > ul > li > a:hover {
+  font-weight: bold;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*Colors*/
 .red {
   background-color: #f32323;
@@ -36,21 +80,16 @@
   height: 100vh;
 }
 
-h1 {
-  padding: 2rem;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .center {
   text-align: center;
+}
+
+.container {
+  background-color: rgb(225, 246, 239);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-selection {
@@ -91,36 +130,11 @@ a {
 
 /*Buttons*/
 .start-btn, .restart-btn {
-  /*Align buttons to center with flexbox*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*Navbar*/
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-nav > ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav > ul > li {
-  margin-left: 3rem;
-}
-
-nav > ul > li > a {
-  color: black;
-}
-
-nav > ul > li > a:hover {
-  font-weight: bold;
+  /*Have the start button and restart button side by side*/
+  display: inline-block;
+  /*Center the button*/
+  margin: 0 auto;
+  /*Set the width and height of the button*/
 }
 
 .gradient {

@@ -23,9 +23,6 @@
     align-items: center;
     flex-direction: column;
 }
-.show {
-    display: block;
-}
 .currentTurn:hover, .playerO:hover, .playerX:hover  {
     cursor: pointer;
 }

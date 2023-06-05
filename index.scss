@@ -5,12 +5,49 @@ $yellow: #ffff00;
 $blue: #7474fc;
 $green: #45af45;
 $purple: #aa54aa;
+$backgroundColor: rgb(225, 246, 239);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
+}
+body {
+    height: 100vh;
+}
+header {
+    padding: 1rem;
+}
+/*Navbar*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: $backgroundColor;
+}
+nav > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav > ul > li {
+    margin-left: 3rem;
+}
+nav > ul > li > a {
+    color: black;
+}
+nav > ul > li > a:hover {
+    font-weight: bold;
+}
+
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
 }
 /*Colors*/
 .red {
@@ -35,18 +72,15 @@ $purple: #aa54aa;
     background-color: rgba(88, 87, 87, 0.616);
     height: 100vh;
 }
-h1 {
-    padding: 2rem;
-}
-li {
-    list-style-type: none;
-}
-a {
-    text-decoration: none;
-    cursor: pointer;
-}
 .center {
     text-align: center;
+}
+.container {
+    background-color: $backgroundColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .game-selection {
     text-decoration: none;
@@ -81,31 +115,12 @@ a {
 }
 /*Buttons*/
 .start-btn, .restart-btn {
-    /*Align buttons to center with flexbox*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/*Navbar*/
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-nav > ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-nav > ul > li {
-    margin-left: 3rem;
-}
-nav > ul > li > a {
-    color: black;
-}
-nav > ul > li > a:hover {
-    font-weight: bold;
+    /*Have the start button and restart button side by side*/
+    display: inline-block;
+    /*Center the button*/
+    margin: 0 auto;
+    /*Set the width and height of the button*/
+
 }
 .gradient {
     background: linear-gradient(to right, white, grey, black, grey, white);
