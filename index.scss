@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+$red: #f32323;
+$orange: #ffa500;
+$yellow: #ffff00;
+$blue: #7474fc;
+$green: #45af45;
+$purple: #aa54aa;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+/*Colors*/
+.red {
+    background-color: $red;
+}
+.orange {
+    background-color: $orange;
+}
+.yellow {
+    background-color: $yellow;
+}
+.blue {
+    background-color: $blue;
+}
+.green {
+    background-color: $green;
+}
+.purple {
+    background-color: $purple;
+}
+
+body {
+    background-color: rgba(88, 87, 87, 0.616);
+}
+h1 {
+    padding: 2rem;
+}
+.center {
+    text-align: center;
+}
+.game-selection {
+    text-decoration: none;
+    color: black;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.grid-item {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5rem 0;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-weight: bold;
+  }
+.grid-item:hover {
+    animation: rotate 0.5s linear;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 4px 4px 3px black;
+}
+.grid-item:active {
+    transform: translateY(2px);
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.gameNav {
+    text-decoration: none;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+.gameNav:hover {
+    font-weight: bold;
+}
+.gradient {
+    background: linear-gradient(to right, white, grey, black, grey, white);
+    background-size: 1000%;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes rotate { /*Card Rotation Effect*/
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
