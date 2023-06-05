@@ -31,12 +31,19 @@ $purple: #aa54aa;
 .purple {
     background-color: $purple;
 }
-
-body {
+.mainpage {
     background-color: rgba(88, 87, 87, 0.616);
+    height: 100vh;
 }
 h1 {
     padding: 2rem;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
 }
 .center {
     text-align: center;
@@ -72,19 +79,32 @@ h1 {
 .grid-item:active {
     transform: translateY(2px);
 }
-.navbar {
+/*Buttons*/
+.start-btn, .restart-btn {
+    /*Align buttons to center with flexbox*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Navbar*/
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
 }
-.gameNav {
-    text-decoration: none;
-    justify-content: space-around;
+nav > ul {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+nav > ul > li {
+    margin-left: 3rem;
+}
+nav > ul > li > a {
     color: black;
 }
-.gameNav:hover {
+nav > ul > li > a:hover {
     font-weight: bold;
 }
 .gradient {
@@ -101,3 +121,26 @@ h1 {
         transform: rotateY(180deg);
     }
 }
+
+//Media Query for  880px
+@media only screen and (max-width: 880px) {
+    nav {
+        display: block;
+    }
+    nav > ul {
+        display: block;
+    }
+    nav > ul > li {
+        text-align: center;
+        margin: 0;
+    }
+    .hamburger {
+        /*Render hamburger nav from font-awesome*/
+        /*Place all item inside hamburger*/
+        position: relative;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        cursor: pointer;
+        }
+    }
