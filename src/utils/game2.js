@@ -4,10 +4,12 @@ const scissorBtn = document.getElementById("scissor-btn");
 const playerScore = document.querySelector(".player-score");
 const computerScore = document.querySelector(".computer-score");
 const displayResult = document.querySelector(".display-result");
+const startBtn = document.querySelector(".start-btn");
 const restartBtn = document.querySelector(".restart-btn");
 //Game Logic & Score Count
 let playerScoreCount = 0;
 let computerScoreCount = 0;
+restartBtn.style.display = "none";
 function game(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     displayResult.textContent = "It's a tie";
@@ -45,16 +47,46 @@ function computerPlay() {
   }
 }
 
-//User Selection
-rockBtn.addEventListener("click", () => game("rock", computerPlay()));
-paperBtn.addEventListener("click", () => game("paper", computerPlay()));
-scissorBtn.addEventListener("click", () => game("scissor", computerPlay()));
+//Disable rock, paper, scissor buttons
+function disableBtn() {
+  rockBtn.disabled = true;
+  paperBtn.disabled = true;
+  scissorBtn.disabled = true;
+}
+disableBtn();
+//Enable rock, paper, scissor buttons
+function enableBtn() {
+  rockBtn.disabled = false;
+  paperBtn.disabled = false;
+  scissorBtn.disabled = false;
+}
 
+// restartBtn.style.display = "block";
 //Resetting the score
-restartBtn.addEventListener("click", function () {
+startBtn.addEventListener("click", function () {
   playerScoreCount = 0;
   computerScoreCount = 0;
   playerScore.textContent = playerScoreCount;
   computerScore.textContent = computerScoreCount;
   displayResult.textContent = "Choose your attack!";
+  rockBtn.disabled = false;
+  paperBtn.disabled = false;
+  scissorBtn.disabled = false;
+  restartBtn.style.display = "block";
+  startBtn.disabled = true;
+  //User Selection
+  rockBtn.addEventListener("click", () => game("rock", computerPlay()));
+  paperBtn.addEventListener("click", () => game("paper", computerPlay()));
+  scissorBtn.addEventListener("click", () => game("scissor", computerPlay()));
 });
+
+restartBtn.addEventListener("click", function () {
+  playerScoreCount = 0;
+  computerScoreCount = 0;
+  playerScore.textContent = playerScoreCount;
+  computerScore.textContent = computerScoreCount;
+  displayResult.textContent = "";
+  disableBtn();
+  restartBtn.style.display = "none";
+  startBtn.disabled = false;
+})

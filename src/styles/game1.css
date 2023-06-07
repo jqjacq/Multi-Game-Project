@@ -21,3 +21,6 @@
     background-repeat: no-repeat;
     background-color: black;
 }
+.restart-btn {
+    display: none;
+}

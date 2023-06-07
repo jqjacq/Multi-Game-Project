@@ -3,7 +3,7 @@ const lives = document.querySelector('.lives');
 const bricksContainer = document.getElementById("bricks-container");
 const displayResult = document.querySelector('.display-result');
 const startBtn = document.querySelector('.start-btn');
-const resetBtn = document.querySelector('.reset-btn');
+const restartBtn = document.querySelector('.restart-btn');
 
 //SETTING CANVAS, BALL, PADDLE, AND BRICKS
 // Set canvas
@@ -43,6 +43,8 @@ for (let cols = 0; cols < brickColumnCount; cols++) {
 let score = 0;
 //Set lives
 let liveCount = 3;
+
+restartBtn.style.display = "none";
 
 //HANDLE KEYBOARD CONTROLS
 //Event listeners for paddle pressing left and right keys and mouse movement
@@ -156,6 +158,7 @@ function drawLives() {
   
 // Set game
 function startGame() {
+  restartBtn.style.display = "block";
     ctx.clearRect(0, 0, canvas.width, canvas.height); //Clear the canvas
     drawBall();
     drawPaddle();
@@ -177,8 +180,9 @@ function startGame() {
         }
         else {
             liveCount--;
-            if(!liveCount) {
+            if(!liveCount || liveCount < 0) {
             displayResult.textContent = "GAME OVER"
+            liveCount = 0;
             //reload in 3 seconds
             setTimeout(() => {
             document.location.reload();
@@ -210,6 +214,14 @@ drawBall();
 drawPaddle();
 drawBricks();
 
-startBtn.addEventListener('click', () => {
+//Start and restart button
+startBtn.addEventListener('click', (e) => {
     setInterval(startGame, 10);
-})
+    startBtn.disabled = true;
+});
+
+restartBtn.addEventListener('click', (e) => {
+  restartBtn.style.display = "none";
+  document.location.reload();
+  clearInterval(interval); // Needed for Chrome to end game
+});

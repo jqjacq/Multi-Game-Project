@@ -19,8 +19,11 @@ let playerX;
 let playerO;
 let isPlayerOTurn = false;
 let currentTurn;
+restartBtn.style.display = "none";
 
 function startGame() {
+  restartBtn.style.display = "block";
+  startBtn.disabled = true;
   isPlayerOTurn = false;
   boxes.forEach((box) => {
     box.classList.remove("playerX");
@@ -77,10 +80,10 @@ function setPlayerHover() {
   board.classList.remove(playerO);
   if (isPlayerOTurn) {
     board.classList.add(playerO);
-    displayResult.textContent = "O's Turn";
+    displayResult.textContent = "Plater 2: O's Turn";
   } else {
     board.classList.add(playerX);
-    displayResult.textContent = "X's Turn";
+    displayResult.textContent = "Player 1: X's Turn";
   }
 }
 //Check for winning condition

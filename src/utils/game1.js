@@ -18,7 +18,6 @@ function createBoard() {
     card.setAttribute("data-id", i);
     card.addEventListener("click", flipCard);
     grid.appendChild(card);
-    console.log(card);
   }
 }
 // FLIP CARD IF MATCH
@@ -91,6 +90,7 @@ function checkForMatch() {
 
 //START AND RESTART BUTTON
 function startGame() {
+  restartBtn.style.display = "block";
   restartGame();
   setTimer();
   //Retrieve data and Randomize the cards

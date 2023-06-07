@@ -38,7 +38,6 @@ function moveBear() {
         timerId = setInterval(generateBearandScore, 250);
     } 
 }
-//Countdown timer 
 function countDown() {
     let countDownTimerId = setInterval(function() {
         currentTime--;
@@ -46,26 +45,15 @@ function countDown() {
         if(currentTime == 0) {
             clearInterval(timerId);
             clearInterval(countDownTimerId);
-            displayResult.textContent = `Game Over! Your scored ${score} points`;    
+            displayResult.textContent = `Game Over! Your scored ${score} points`;   
+             
         }
     }, 1000)
+
 }
 //Start game
 startBtn.addEventListener('click', function() { 
    moveBear();
    countDown();
    startBtn.disabled = true;
-   restartBtn.disabled = false;
-})
-//Restart game
-restartBtn.addEventListener('click', function() {
-    //Stop bear from moving and reset the score and timer
-    clearInterval(timerId);
-    score = 0;
-    currentTime = 30;
-    displayScore.textContent = score;
-    displayTimer.textContent = currentTime;
-    displayResult.textContent = '';
-    startBtn.disabled = false;
-    restartBtn.disabled = true;
 })
