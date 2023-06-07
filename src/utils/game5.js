@@ -6,7 +6,7 @@ const displayScore = document.querySelector('.count-score');
 const displayTimer = document.querySelector('.timer');
 const displayResult = document.querySelector('.display-result');
 let score = 0; 
-let currentTime = 30;
+let currentTime = 25;
 let timerId = null; 
 let hitBear; 
 
@@ -19,6 +19,7 @@ function generateBearandScore() {
     let hitBear = randomHole.id; //Get the id of the hole with the bear
     //Keep track of the score when the bear is hit and remove the bear
     holes.forEach(hole => {
+        hole.style.cursor = 'pointer';
         hole.addEventListener('mousedown', function() {
             if(hole.id == hitBear) {
                 score++;
@@ -30,9 +31,9 @@ function generateBearandScore() {
 }
 //Move bear
 function moveBear() {
-    if(currentTime == 30) {
+    if(currentTime == 25) {
         timerId = setInterval(generateBearandScore, 750);
-    } else if (currentTime == 20) {
+    } else if (currentTime == 15) {
         timerId = setInterval(generateBearandScore, 500);
     } else {
         timerId = setInterval(generateBearandScore, 250);
@@ -46,7 +47,7 @@ function countDown() {
             clearInterval(timerId);
             clearInterval(countDownTimerId);
             displayResult.textContent = `Game Over! Your scored ${score} points`;   
-             
+            holes.forEach(hole => hole.style.cursor = 'default');
         }
     }, 1000)
 

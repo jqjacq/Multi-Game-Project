@@ -10,6 +10,10 @@ const restartBtn = document.querySelector(".restart-btn");
 let playerScoreCount = 0;
 let computerScoreCount = 0;
 restartBtn.style.display = "none";
+scissorBtn.style.cursor = "default";
+paperBtn.style.cursor = "default";
+rockBtn.style.cursor = "default";
+
 function game(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     displayResult.textContent = "It's a tie";
@@ -69,6 +73,9 @@ startBtn.addEventListener("click", function () {
   playerScore.textContent = playerScoreCount;
   computerScore.textContent = computerScoreCount;
   displayResult.textContent = "Choose your attack!";
+  scissorBtn.style.cursor = "pointer";
+  paperBtn.style.cursor = "pointer";
+  rockBtn.style.cursor = "pointer";
   rockBtn.disabled = false;
   paperBtn.disabled = false;
   scissorBtn.disabled = false;
