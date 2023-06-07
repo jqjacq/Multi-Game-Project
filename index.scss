@@ -20,6 +20,9 @@ body {
 header {
     padding: 1rem;
 }
+button {
+    cursor: pointer;
+}
 /*Navbar*/
 nav {
     display: flex;
@@ -127,8 +130,11 @@ a {
     background-size: 1000%;
     animation: gradient 5s ease infinite;
 }
-
-@keyframes rotate { /*Card Rotation Effect*/
+.start-btn, .restart-btn {
+    cursor: pointer;
+}
+//Card Rotation Effect
+@keyframes rotate { 
     from {
         transform: rotateY(0deg);
     }

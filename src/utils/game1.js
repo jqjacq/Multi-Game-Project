@@ -100,7 +100,6 @@ function startGame() {
       cardsData.sort(() => 0.5 - Math.random());
       cardsData.forEach((card) => {
         cardsArray.push(card);
-        console.log(cardsArray);
       });
       createBoard();
     });

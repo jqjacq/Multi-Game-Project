@@ -26,6 +26,7 @@ function startGame() {
   startBtn.disabled = true;
   isPlayerOTurn = false;
   boxes.forEach((box) => {
+    box.style.cursor = "pointer";
     box.classList.remove("playerX");
     box.classList.remove("playerO");
     box.removeEventListener("click", handleBoxClick);
@@ -36,6 +37,7 @@ function startGame() {
 
 function handleBoxClick(e) {
   const box = e.target;
+  box.style.cursor = "default";
   let currentTurn = isPlayerOTurn ? "playerO" : "playerX";
   placeMark(box, currentTurn);
   if (checkWin(currentTurn)) {
@@ -80,7 +82,7 @@ function setPlayerHover() {
   board.classList.remove(playerO);
   if (isPlayerOTurn) {
     board.classList.add(playerO);
-    displayResult.textContent = "Plater 2: O's Turn";
+    displayResult.textContent = "Player 2: O's Turn";
   } else {
     board.classList.add(playerX);
     displayResult.textContent = "Player 1: X's Turn";

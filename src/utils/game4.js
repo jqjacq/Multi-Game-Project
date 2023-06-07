@@ -159,6 +159,7 @@ function drawLives() {
 // Set game
 function startGame() {
   restartBtn.style.display = "block";
+  canvas.style.cursor = "pointer";
     ctx.clearRect(0, 0, canvas.width, canvas.height); //Clear the canvas
     drawBall();
     drawPaddle();
