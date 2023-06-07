@@ -15,6 +15,7 @@ $backgroundColor: rgb(225, 246, 239);
 }
 body {
     height: 100vh;
+    background-color: $backgroundColor;
 }
 header {
     padding: 1rem;
@@ -25,7 +26,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: $backgroundColor;
 }
 nav > ul {
     display: flex;

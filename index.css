@@ -8,6 +8,7 @@
 
 body {
   height: 100vh;
+  background-color: rgb(225, 246, 239);
 }
 
 header {
@@ -20,7 +21,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: rgb(225, 246, 239);
 }
 
 nav > ul {
