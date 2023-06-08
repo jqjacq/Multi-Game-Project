@@ -9,8 +9,9 @@ h3 {
 .count-score {
     margin-right: 1rem;
 }
-#snakeCanvas {
-    width: 400px;
-    height: 400px;
+#gameCanvas {
+    position: relative;
+    margin: 0 auto;
+    display: block;
     background-color: black;
 }
