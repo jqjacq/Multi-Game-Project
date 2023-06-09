@@ -100,9 +100,23 @@ h1, h2, h3 {
   justify-content: center;
 }
 
+.inlineBlock {
+  display: inline-block;
+}
+
+.rightMargin {
+  margin-right: 2rem;
+}
+
 .game-selection {
   text-decoration: none;
   color: black;
+}
+
+.gradient {
+  background: linear-gradient(to right, white, grey, black, grey, white);
+  background-size: 1000%;
+  animation: gradient 5s ease infinite;
 }
 
 .grid-container {
@@ -145,14 +159,26 @@ h1, h2, h3 {
   /*Set the width and height of the button*/
 }
 
-.gradient {
-  background: linear-gradient(to right, white, grey, black, grey, white);
-  background-size: 1000%;
-  animation: gradient 5s ease infinite;
+.start-btn, .restart-btn {
+  margin-right: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
 }
 
-.start-btn, .restart-btn {
-  cursor: pointer;
+.start-btn {
+  background-color: #7474fc;
+}
+
+.restart-btn {
+  background-color: #f32323;
+}
+
+.start-btn:hover, .restart-btn:hover {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 1px black;
 }
 
 @keyframes rotate {

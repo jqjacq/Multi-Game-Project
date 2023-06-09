@@ -21,7 +21,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
-}
-.restart-btn {
-    display: none;
+    transform: rotateY(360deg);
+    transition: transform 0.3s ease-in-out;
 }

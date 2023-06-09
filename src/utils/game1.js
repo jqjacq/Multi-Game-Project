@@ -18,6 +18,7 @@ function createBoard() {
     card.setAttribute("data-id", i);
     card.addEventListener("click", flipCard);
     grid.appendChild(card);
+    displayResult.textContent = "";
   }
 }
 // FLIP CARD IF MATCH
@@ -56,13 +57,13 @@ function checkForMatch() {
   let secondCard = cards[cardsChosenId[1]];
   if (cardsChosenId[0] === cardsChosenId[1]) {
     displayResult.textContent = "You have clicked the same image!";
-    removeDisplayResult()
+    removeDisplayResult();
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
     moves++;
   } else if (firstCard.innerHTML === secondCard.innerHTML) {
     displayResult.textContent = "You found a match!";
-    removeDisplayResult()
+    removeDisplayResult();
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
     moves++;
@@ -73,24 +74,21 @@ function checkForMatch() {
     firstCard.innerHTML = "";
     secondCard.innerHTML = "";
     moves++;
-  } 
+  }
   //Once user completes all matches, display alert and stop timer
   if (document.querySelectorAll(".flip").length === cardsArray.length) {
     setTimeout(() => {
-    displayResult.textContent = `Congratulations! You found all the matches! Your time is ${displayTimer.textContent} seconds with ${moves} moves!`;
+      displayResult.textContent = `Congratulations! You found all the matches! Your time is ${displayTimer.textContent} seconds with ${moves} moves!`;
     }, 10000);
     stopTimer(timer);
   }
   cardsChosenId = [];
-
   displayMoves.textContent = moves;
 }
 
-
-
 //START AND RESTART BUTTON
 function startGame() {
-  restartBtn.style.display = "block";
+  restartBtn.style.display = "inline-block";
   restartGame();
   setTimer();
   //Retrieve data and Randomize the cards
@@ -104,7 +102,9 @@ function startGame() {
       createBoard();
     });
   startBtn.disabled = true;
+  startBtn.style.cursor = "not-allowed";
   restartBtn.disabled = false;
+  restartBtn.style.cursor = "pointer";
 }
 function restartGame() {
   cardsArray = [];
@@ -114,8 +114,25 @@ function restartGame() {
   displayTimer.textContent = 0;
   startBtn.disabled = false;
   restartBtn.disabled = true;
+  startBtn.style.cursor = "pointer";
+  restartBtn.style.cursor = "not-allowed";
   stopTimer(timer);
 }
-//EVENT LISTENER 
+//EVENT LISTENER
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", restartGame);
+
+//Default board
+function setUpBoard() {
+  for (let i = 0; i < 12; i++) {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    card.setAttribute("data-id", i);
+    grid.appendChild(card);
+    card.style.cursor = "not-allowed";
+    displayResult.textContent = "Click Start to play!";
+    restartBtn.style.cursor = "not-allowed";
+    restartBtn.disabled = true;
+  }
+}
+setUpBoard();
