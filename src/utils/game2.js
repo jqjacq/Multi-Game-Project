@@ -1,3 +1,5 @@
+import { disableRestart, enableRestart } from "./startrestart.js";
+
 const rockBtn = document.getElementById("rock-btn");
 const paperBtn = document.getElementById("paper-btn");
 const scissorBtn = document.getElementById("scissor-btn");
@@ -6,10 +8,10 @@ const computerScore = document.querySelector(".computer-score");
 const displayResult = document.querySelector(".display-result");
 const startBtn = document.querySelector(".start-btn");
 const restartBtn = document.querySelector(".restart-btn");
+displayResult.textContent = "Click Start to play!";
 //Game Logic & Score Count
 let playerScoreCount = 0;
 let computerScoreCount = 0;
-restartBtn.style.display = "none";
 scissorBtn.style.cursor = "default";
 paperBtn.style.cursor = "default";
 rockBtn.style.cursor = "default";
@@ -68,6 +70,7 @@ function enableBtn() {
 // restartBtn.style.display = "block";
 //Resetting the score
 startBtn.addEventListener("click", function () {
+  enableRestart();
   playerScoreCount = 0;
   computerScoreCount = 0;
   playerScore.textContent = playerScoreCount;
@@ -79,8 +82,6 @@ startBtn.addEventListener("click", function () {
   rockBtn.disabled = false;
   paperBtn.disabled = false;
   scissorBtn.disabled = false;
-  restartBtn.style.display = "block";
-  startBtn.disabled = true;
   //User Selection
   rockBtn.addEventListener("click", () => game("rock", computerPlay()));
   paperBtn.addEventListener("click", () => game("paper", computerPlay()));
@@ -93,7 +94,5 @@ restartBtn.addEventListener("click", function () {
   playerScore.textContent = playerScoreCount;
   computerScore.textContent = computerScoreCount;
   displayResult.textContent = "";
-  disableBtn();
-  restartBtn.style.display = "none";
-  startBtn.disabled = false;
-})
+  disableRestart();
+});

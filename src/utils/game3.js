@@ -1,3 +1,5 @@
+import { disableRestart, enableRestart } from "./startrestart.js";
+
 // const playerScore = document.querySelector('.player-score');
 // const computerScore = document.querySelector('.computer-score');
 const startBtn = document.querySelector(".start-btn");
@@ -19,10 +21,11 @@ let playerX;
 let playerO;
 let isPlayerOTurn = false;
 let currentTurn;
-restartBtn.style.display = "none";
+displayResult.textContent = "Click Start to play!";
+disableRestart();
 
 function startGame() {
-  restartBtn.style.display = "block";
+  enableRestart();
   startBtn.disabled = true;
   isPlayerOTurn = false;
   boxes.forEach((box) => {
@@ -97,6 +100,7 @@ function checkWin(currentTurn) {
   });
 }
 function restartGame() {
+  disableRestart();
   startGame();
   displayResult.textContent = "";
   displayResult.classList.remove("show");

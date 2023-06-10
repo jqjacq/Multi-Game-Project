@@ -1,3 +1,5 @@
+import { disableRestart, enableRestart } from "./startrestart.js";
+
 const grid = document.querySelector(".grid");
 const displayMoves = document.querySelector(".count-moves");
 const displayTimer = document.querySelector(".timer");
@@ -101,10 +103,7 @@ function startGame() {
       });
       createBoard();
     });
-  startBtn.disabled = true;
-  startBtn.style.cursor = "not-allowed";
-  restartBtn.disabled = false;
-  restartBtn.style.cursor = "pointer";
+  enableRestart();
 }
 function restartGame() {
   cardsArray = [];
@@ -112,10 +111,7 @@ function restartGame() {
   grid.innerHTML = "";
   displayMoves.textContent = 0;
   displayTimer.textContent = 0;
-  startBtn.disabled = false;
-  restartBtn.disabled = true;
-  startBtn.style.cursor = "pointer";
-  restartBtn.style.cursor = "not-allowed";
+  disableRestart();
   stopTimer(timer);
 }
 //EVENT LISTENER
