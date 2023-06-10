@@ -6,6 +6,7 @@ const scissorBtn = document.getElementById("scissor-btn");
 const playerScore = document.querySelector(".player-score");
 const computerScore = document.querySelector(".computer-score");
 const displayResult = document.querySelector(".display-result");
+const displayAllResult = document.querySelector(".display-all-result");
 const startBtn = document.querySelector(".start-btn");
 const restartBtn = document.querySelector(".restart-btn");
 displayResult.textContent = "Click Start to play!";
@@ -18,38 +19,39 @@ rockBtn.style.cursor = "default";
 
 function game(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    displayResult.textContent = "It's a tie";
-  } else if (playerSelection === "rock" && computerSelection === "scissor") {
+    displayResult.textContent = "It's a tie!";
+  } else if (playerSelection === "✊" && computerSelection === "✌️") {
     playerScoreCount++;
-    displayResult.textContent = "You win! Rock beats Scissor";
-  } else if (playerSelection === "rock" && computerSelection === "paper") {
+    displayResult.textContent = `You win! Rock beats Scissor.`;
+  } else if (playerSelection === "✊" && computerSelection === "🤚") {
     computerScoreCount++;
-    displayResult.textContent = "You lose! Paper beats Rock";
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
+    displayResult.textContent = `You lose! Paper beats Rock.`;
+  } else if (playerSelection === "🤚" && computerSelection === "✊") {
     playerScoreCount++;
-    displayResult.textContent = "You win! Paper beats Rock";
-  } else if (playerSelection === "paper" && computerSelection === "scissor") {
+    displayResult.textContent = "You win! Paper beats Rock.";
+  } else if (playerSelection === "🤚" && computerSelection === "✌️") {
     computerScoreCount++;
-    displayResult.textContent = "You lose! Scissor beats Paper";
-  } else if (playerSelection === "scissor" && computerSelection === "paper") {
+    displayResult.textContent = "You lose! Scissor beats Paper.";
+  } else if (playerSelection === "✌️" && computerSelection === "🤚") {
     playerScoreCount++;
-    displayResult.textContent = "You win! Scissor beats Paper";
-  } else if (playerSelection === "scissor" && computerSelection === "rock") {
+    displayResult.textContent = "You win! Scissor beats Paper.";
+  } else if (playerSelection === "✌️" && computerSelection === "✊") {
     computerScoreCount++;
-    displayResult.textContent = "You lose! Rock beats Scissor";
+    displayResult.textContent = "You lose!";
   }
   playerScore.textContent = playerScoreCount;
   computerScore.textContent = computerScoreCount;
+  displayAllResult.textContent = `You: ${playerSelection} ${computerSelection} :Computer`;
 }
 //Computer Selection
 function computerPlay() {
   let computerSelection = Math.floor(Math.random() * 3);
   if (computerSelection === 0) {
-    return "rock";
+    return "✊";
   } else if (computerSelection === 1) {
-    return "paper";
+    return "🤚";
   } else {
-    return "scissor";
+    return "✌️";
   }
 }
 
@@ -83,9 +85,9 @@ startBtn.addEventListener("click", function () {
   paperBtn.disabled = false;
   scissorBtn.disabled = false;
   //User Selection
-  rockBtn.addEventListener("click", () => game("rock", computerPlay()));
-  paperBtn.addEventListener("click", () => game("paper", computerPlay()));
-  scissorBtn.addEventListener("click", () => game("scissor", computerPlay()));
+  rockBtn.addEventListener("click", () => game("✊", computerPlay()));
+  paperBtn.addEventListener("click", () => game("🤚", computerPlay()));
+  scissorBtn.addEventListener("click", () => game("✌️", computerPlay()));
 });
 
 restartBtn.addEventListener("click", function () {

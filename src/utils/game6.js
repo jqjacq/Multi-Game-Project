@@ -1,3 +1,5 @@
+import { disableRestart, enableRestart } from "./startrestart.js";
+
 const gameCanvas = document.getElementById("gameCanvas");
 const gameCanvas_ctx = gameCanvas.getContext("2d");
 const startBtn = document.querySelector(".start-btn");
@@ -34,6 +36,7 @@ document.addEventListener("keydown", changeDirection);
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", function () {
   location.reload();
+  disableRestart();
 });
 
 function startGame() {
@@ -47,7 +50,7 @@ function startGame() {
     moveSnake();
     startGame();
   }, 100);
-  startBtn.disabled = true;
+  enableRestart();
 }
 
 //Draw border around canvas

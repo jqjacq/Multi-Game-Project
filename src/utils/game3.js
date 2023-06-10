@@ -26,7 +26,6 @@ disableRestart();
 
 function startGame() {
   enableRestart();
-  startBtn.disabled = true;
   isPlayerOTurn = false;
   boxes.forEach((box) => {
     box.style.cursor = "pointer";

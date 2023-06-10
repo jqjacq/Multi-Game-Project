@@ -108,6 +108,10 @@ h1, h2, h3 {
   margin-right: 2rem;
 }
 
+.marginOne {
+  margin: 1rem;
+}
+
 .game-selection {
   text-decoration: none;
   color: black;
