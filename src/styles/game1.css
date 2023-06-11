@@ -24,3 +24,10 @@
     transform: rotateY(360deg);
     transition: transform 0.3s ease-in-out;
 }
+
+/* Media Query */
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

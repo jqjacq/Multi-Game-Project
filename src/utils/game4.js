@@ -15,7 +15,7 @@ const ctx = canvas.getContext("2d");
 // Set ball
 const ballRadius = 5;
 let x = canvas.width / 2;
-let y = canvas.height - 30;
+let y = canvas.height - 15;
 let dx = 3;
 let dy = -3;
 // Set paddle
@@ -91,10 +91,9 @@ function collisionDetection() {
           score++;
           if (score === brickRowCount * brickColumnCount) {
             displayResult.textContent = "YOU WIN, CONGRATULATIONS!";
-            //reload in 3 seconds
             setTimeout(() => {
               document.location.reload();
-            }, 3000);
+            }, 5000);
             clearInterval(interval); // Needed for Chrome to end game
           }
         }
@@ -182,11 +181,10 @@ function startGame() {
       if (!liveCount || liveCount < 0) {
         displayResult.textContent = "GAME OVER";
         liveCount = 0;
-        //reload in 3 seconds
         setTimeout(() => {
           document.location.reload();
         }, 3000);
-        clearInterval(interval); // Needed for Chrome to end game
+        clearInterval(interval);
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;

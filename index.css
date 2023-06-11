@@ -204,13 +204,13 @@ h1, h2, h3 {
     text-align: center;
     margin: 0;
   }
-  .hamburger {
-    /*Render hamburger nav from font-awesome*/
-    /*Place all item inside hamburger*/
-    position: relative;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    cursor: pointer;
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .grid-item {
+    width: 150px;
+    height: 50px;
   }
 }/*# sourceMappingURL=index.css.map */

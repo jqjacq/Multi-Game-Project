@@ -7,8 +7,8 @@ const restartBtn = document.querySelector(".restart-btn");
 const displayResult = document.querySelector(".display-result");
 const displayScore = document.querySelector(".display-score");
 //Color of the canvas and snake
-const boardBorder = "white";
-const boardBackground = "black";
+const boardBorder = "black";
+const boardBackground = "white";
 const snakeBorder = "darkgreen";
 const snakeColor = "green";
 let snake = [
@@ -17,6 +17,12 @@ let snake = [
   { x: 180, y: 200 },
   { x: 170, y: 200 },
   { x: 160, y: 200 },
+  { x: 150, y: 200 },
+  { x: 140, y: 200 },
+  { x: 130, y: 200 },
+  { x: 120, y: 200 },
+  { x: 110, y: 200 },
+
 ];
 let score = 0;
 let time = 0;
@@ -26,6 +32,8 @@ let foodY;
 let dx = 10; // Horizontal velocity
 let dy = 0; // Vertical velocity
 let increaseSpeed;
+
+drawSnake();
 
 document.addEventListener("keydown", function (event) {
   if (event.key === "Enter" || event.key === " ") {
