@@ -1,0 +1,21 @@
+[
+    {
+        "index": 1,
+       "img": "src/imgs/indeximgs/1.jpg"
+    }, {
+        "index": 2,
+        "img": "src/imgs/indeximgs/2.jpg"
+    }, {
+        "index": 3,
+        "img": "src/imgs/indeximgs/3.jpg"
+    }, {
+        "index": 4,
+        "img": "src/imgs/indeximgs/4.jpg"
+    }, {
+        "index": 5,
+        "img": "src/imgs/indeximgs/5.jpg"
+    }, {
+        "index": 6,
+        "img": "src/imgs/indeximgs/6.jpg"
+    }
+]

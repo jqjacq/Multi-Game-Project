@@ -58,33 +58,8 @@ h1, h2, h3 {
   cursor: default;
 }
 
-/*Colors*/
-.red {
-  background-color: #f32323;
-}
-
-.orange {
-  background-color: #ffa500;
-}
-
-.yellow {
-  background-color: #ffff00;
-}
-
-.blue {
-  background-color: #7474fc;
-}
-
-.green {
-  background-color: #45af45;
-}
-
-.purple {
-  background-color: #aa54aa;
-}
-
 .mainpage {
-  background-color: rgba(88, 87, 87, 0.616);
+  background: linear-gradient(rgba(194, 111, 233, 0), rgba(204, 140, 247, 0.5));
   height: 100vh;
 }
 
@@ -112,55 +87,53 @@ h1, h2, h3 {
   margin: 1rem;
 }
 
+.classic {
+  text-shadow: 1px 1px 1px black;
+}
+
 .game-selection {
   text-decoration: none;
   color: black;
 }
 
-.gradient {
-  background: linear-gradient(to right, white, grey, black, grey, white);
-  background-size: 1000%;
-  animation: gradient 5s ease infinite;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-  padding: 10px;
+  grid-gap: 15px;
+  padding: 1rem;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 }
 
 .grid-item {
-  border: 3px solid black;
-  border-radius: 10px;
   padding: 5rem 0;
   width: 200px;
   height: 200px;
   text-align: center;
   font-weight: bold;
-}
-
-.grid-item:hover {
-  animation: rotate 0.5s linear;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 4px 4px 3px black;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px black;
 }
 
 .grid-item:active {
-  transform: translateY(2px);
+  font-size: 1.75rem;
+}
+
+.grid-images {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 0 3px black;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
 }
 
 /*Buttons*/
 .start-btn, .restart-btn {
   /*Have the start button and restart button side by side*/
   display: inline-block;
-  /*Center the button*/
   margin: 0 auto;
-  /*Set the width and height of the button*/
 }
 
 .start-btn, .restart-btn {
@@ -185,14 +158,12 @@ h1, h2, h3 {
   box-shadow: 2px 2px 1px black;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(180deg);
-  }
+.start-btn:active, .restart-btn:active {
+  transform: translateY(4px);
+  box-shadow: 1px 1px 1px black;
 }
+
+/*Media Query*/
 @media only screen and (max-width: 880px) {
   nav {
     display: block;
