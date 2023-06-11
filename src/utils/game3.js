@@ -56,7 +56,7 @@ function endGame(draw) {
   if (draw) {
     displayResult.textContent = "Draw!";
   } else {
-    displayResult.textContent = `${isPlayerOTurn ? "O's" : "X's"} Wins!`;
+    displayResult.textContent = `${isPlayerOTurn ? "Player O" : "Player X"} Wins!`;
   }
   displayResult.classList.add("show");
   boxes.forEach((box) => {
@@ -99,9 +99,14 @@ function checkWin(currentTurn) {
   });
 }
 function restartGame() {
+  boxes.forEach((box) => {
+    box.classList.remove("playerX");
+    box.classList.remove("playerO");
+    box.removeEventListener("click", handleBoxClick);
+    box.style.cursor = "default";
+  });
   disableRestart();
-  startGame();
-  displayResult.textContent = "";
+  displayResult.textContent = "Click Start to play!";
   displayResult.classList.remove("show");
 }
 
