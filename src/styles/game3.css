@@ -14,12 +14,12 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    .box {
-        width: 100px;
-        height: 100px;
-        border: 2px solid black;
-        border-radius: 5px;
-    }
+}
+.box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 /*Display X and Os*/
